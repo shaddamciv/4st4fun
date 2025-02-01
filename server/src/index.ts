@@ -8,10 +8,10 @@ import { dirname } from "path";
 import { NgrokService } from "./services/ngrok.service.js";
 import { TelegramService } from "./services/telegram.service.js";
 import { IService } from "./services/base.service.js";
-import twitterRouter from "./routes/twitter.js";
-import discordRouter from "./routes/discord.js";
+// import twitterRouter from "./routes/twitter.js";
+// import discordRouter from "./routes/discord.js";
 import cookieParser from "cookie-parser";
-import githubRouter from "./routes/github.js";
+// import githubRouter from "./routes/github.js";
 import { AnyType } from "./utils.js";
 import { isHttpError } from "http-errors";
 
@@ -34,6 +34,12 @@ const port = process.env.PORT || 3001;
 // Configure CORS with ALL allowed origins
 app.use(cors());
 
+// Add ngrok-skip-browser-warning header to all responses
+app.use((_req: Request, res: Response, next: NextFunction) => {
+  res.setHeader("ngrok-skip-browser-warning", "true");
+  next();
+});
+
 // Parse JSON request bodies
 app.use(express.json());
 app.use(cookieParser());
@@ -48,13 +54,13 @@ const telegramService = TelegramService.getInstance();
 app.use("/telegram/webhook", telegramService.getWebhookCallback());
 
 // Mount Twitter OAuth routes
-app.use("/auth/twitter", twitterRouter);
+// app.use("/auth/twitter", twitterRouter);
 
 // Mount Discord OAuth routes
-app.use("/auth/discord", discordRouter);
+// app.use("/auth/discord", discordRouter);
 
 // Mount GitHub OAuth routes
-app.use("/auth/github", githubRouter);
+// app.use("/auth/github", githubRouter);
 
 // 404 handler
 app.use((_req: Request, _res: Response, _next: NextFunction) => {
