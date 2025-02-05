@@ -1,6 +1,11 @@
 {
   "name": "Ace",
   "clients": [],
+  "clientConfig": {
+    "telegram": {
+      "shouldIgnoreDirectMessages": false
+    }
+  },
   "modelProvider": "openai",
   "settings": {
     "secrets": {},
