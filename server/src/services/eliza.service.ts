@@ -43,6 +43,7 @@ import { Bot, Context } from "grammy";
 import { bootstrapPlugin } from "@ai16z/plugin-bootstrap";
 import { collablandPlugin } from "../plugins/collabland.plugin.js";
 import { StorageService } from "../plugins/gated-storage-plugin/services/storage.service.js";
+import goatPlugin from "../plugins/goat-plugin/index.js";
 
 const MAX_MESSAGE_LENGTH = 4096; // Telegram's max message length
 
@@ -593,7 +594,12 @@ export class ElizaService extends BaseService {
         modelProvider: character.modelProvider || ModelProviderName.OPENAI,
         character,
         conversationLength: 4096,
-        plugins: [bootstrapPlugin, collablandPlugin, gateDataPlugin],
+        plugins: [
+          bootstrapPlugin,
+          collablandPlugin,
+          gateDataPlugin,
+          goatPlugin,
+        ],
         cacheManager: new CacheManager(new MemoryCacheAdapter()),
         logging: true,
       });

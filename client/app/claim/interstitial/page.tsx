@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function InterstitialPage() {
+function InterstitialContent() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -39,5 +39,22 @@ export default function InterstitialPage() {
         <p className="text-sm text-gray-600">Completing authentication...</p>
       </div>
     </div>
+  );
+}
+
+export default function InterstitialPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex items-center justify-center min-h-screen bg-white">
+          <div className="text-center">
+            <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#1DA1F2] border-t-transparent mx-auto mb-4" />
+            <p className="text-sm text-gray-600">Loading...</p>
+          </div>
+        </div>
+      }
+    >
+      <InterstitialContent />
+    </Suspense>
   );
 }

@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "NodeNext",
-    "lib": ["es2017", "esnext.asynciterable"],
+    "target": "es2022",
+    "module": "nodenext",
+    "lib": ["es2022", "esnext.asynciterable"],
     "skipLibCheck": true,
     "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "nodenext",
     "removeComments": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
