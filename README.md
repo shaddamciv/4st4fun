@@ -1,6 +1,9 @@
-# 🤖 AI Agent Starter Kit
+# 🤖 ETHGlobal Hackathon 2025
 
-A modern full-stack AI-enabled template using Next.js for frontend and Express.js for backend, with Telegram and OpenAI integrations! ✨
+A fork from the AI Agent Starter Kit to build on a prediction market based bot for the ETHGlobal Hackathon 2025.
+
+Current idea is to use Covalent's API to get the price of different memecoins and use that data to make predictions about the future price of a chosen memecoin.
+
 
 > [!IMPORTANT]
 > The AI Agent Starter Kit is powered by the Collab.Land AccountKit APIs
