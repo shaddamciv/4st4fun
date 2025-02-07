@@ -1,4 +1,4 @@
-import { AutoClientInterface } from "@elizaos/client-auto";
+import { AutoClientInterface } from "../custom-clients/index.ts";
 import { Character, elizaLogger, IAgentRuntime } from "@elizaos/core";
 
 export async function initializeClients(
@@ -26,21 +26,3 @@ export async function initializeClients(
 
   return clients;
 }
-
-
-// class AutoClient {
-//   runtime: IAgentRuntime;
-//   constructor(runtime: IAgentRuntime) {
-//       this.runtime = runtime;
-
-//       // Start trading loop
-//       this.interval = setInterval(() => {
-//           this.makeTrades();
-//       }, .5 * 60 * 1000); // 1 hour interval
-//   }
-
-//   async makeTrades() {
-//       // Get recommendations"
-//       console.log("Called Auto Client");
-//   }
-// }
