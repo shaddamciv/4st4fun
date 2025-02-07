@@ -1,0 +1,39 @@
+{
+    "name": "@elizaos/plugin-eigenda",
+    "version": "0.1.0",
+    "description": "EigenDA plugin for Eliza",
+    "type": "module",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch",
+        "clean": "rimraf dist",
+        "typecheck": "tsc --noEmit",
+        "lint": "eslint src/",
+        "lint:fix": "eslint src/ --fix"
+    },
+    "dependencies": {
+        "@elizaos/core": "workspace:*",
+        "ethers": "^6.11.1",
+        "axios": "^1.6.7",
+        "zod": "^3.22.4"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.19",
+        "rimraf": "^5.0.5",
+        "tsup": "^8.0.2",
+        "typescript": "^5.3.3"
+    }
+}
