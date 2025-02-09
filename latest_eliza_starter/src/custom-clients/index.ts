@@ -10,7 +10,7 @@ export class AutoClient {
         // start a loop that runs every x seconds
         this.interval = setInterval(
             async () => {
-                elizaLogger.error("running auto client...");
+                // elizaLogger.error("running auto client...");
             },
             .2 * 60 * 1000
         ); // 1 hour in milliseconds

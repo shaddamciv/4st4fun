@@ -1,5 +1,5 @@
 import { DirectClient } from "@elizaos/client-direct";
-import { AutoClient } from "@elizaos/client-auto";
+import { evmPlugin } from "@elizaos/plugin-evm";
 import {
   AgentRuntime,
   elizaLogger,
@@ -58,6 +58,7 @@ export function createAgent(
     character,
     plugins: [
       bootstrapPlugin,
+      evmPlugin,
       nodePlugin,
       character.settings?.secrets?.WALLET_PUBLIC_KEY ? solanaPlugin : null,
     ].filter(Boolean),
